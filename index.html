@@ -1,0 +1,77 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+       
+        <h2>Payslip Generator</h2>
+        <form id="payslipForm">
+          <table>
+            <tr>
+              <td>
+                First Name:
+              </td>
+              <td>
+                <input type="text" id="firstName">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Last Name:
+              </td>
+              <td>
+                <input type="text" id="lastName">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Annual Salary:
+              </td>
+              <td>
+                <input type="number" id="annualSalary">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Super Rate:
+              </td>
+              <td>
+                <input type="number" id="superRate">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Payment Start Date:
+              </td>
+              <td>
+                <input type="date" id="paymentStart">
+              </td>  
+            </tr>
+            <tr>
+              <tr>
+                <td>
+                  Payment End Date:
+                </td>
+                <td>
+                  <input type="date" id="paymentEnd">
+                </td>  
+              </tr>
+              <td>
+                <input type="submit" value="Generate Payslip">
+              </td>
+              <td>
+                <input type="button" value="Reset" id="resetButton">
+              </td>
+              <td>
+                <input type="file" id="csvInput" accept=".csv">
+              </td>
+            </tr>
+          </table>
+        </form>
+        <div id="payslipOutput"></div>
+        <script type="module" src="js/index.js"></script> 
+    </body>
+    </html>
