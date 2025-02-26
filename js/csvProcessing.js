@@ -1,4 +1,5 @@
 import Employee from "./employee.js";
+import PayslipCalculator from "./payslipCalculator.js";
 
 export function processCsv(payslipOutput) {
   document
@@ -25,25 +26,28 @@ export function processCsv(payslipOutput) {
             const annualSalary = cols[i][2];
             const superRate = parseInt(cols[i][3]);
             const payPeriod = cols[i][4];
+            const grossIncome = PayslipCalculator.calculateGrossIncome(annualSalary)
+            const incomeTax = PayslipCalculator.calculateIncomeTax(annualSalary)
+            const netIncome = PayslipCalculator.calculateNetIncome(grossIncome,incomeTax)
+            const superIncome = PayslipCalculator.calculateSuper(grossIncome, superRate)
 
             const employee = new Employee(
               firstName,
               lastName,
-              annualSalary,
-              superRate,
               null,
               null,
               payPeriod
             );
+            
             const payslipData = employee.generatePayslip();
             payTable += `
             <tr>
               <td>${payslipData.fullName}</td>
               <td>${payslipData.payPeriod}</td>
-              <td>${payslipData.grossIncome}</td>
-              <td>${payslipData.incomeTax}</td>
-              <td>${payslipData.netIncome}</td>
-              <td>${payslipData.superIncome}</td>
+              <td>${grossIncome}</td>
+              <td>${incomeTax}</td>
+              <td>${netIncome}</td>
+              <td>${superIncome}</td>
             </tr>
           `;
           }
