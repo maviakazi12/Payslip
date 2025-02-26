@@ -1,8 +1,7 @@
-import * as PayslipCalculator from "./utilityFunctions.js";
-import { errorHandling } from "./errors.js";
-import { resetForm } from "./resetForm.js";
-import { handleFormSubmit } from "./formHandler.js";
-import { processCsv } from "./csvProcessing.js";
+import { errorHandling } from "./utils/errors.js";
+import { resetForm } from "./utils/resetForm.js";
+import { handleFormSubmit } from "./utils/formHandler.js";
+import { processCsv } from "./utils/csvProcessing.js";
 
 const payslipForm = document.getElementById("payslipForm");
 const payslipOutput = document.getElementById("payslipOutput");

@@ -1,4 +1,4 @@
-import { getDayMonth } from "./utilityFunctions.js";
+import { getDayMonth } from "../utils/utilityFunctions.js";
 
 class Employee {
   constructor(
@@ -28,7 +28,7 @@ class Employee {
   generatePayslip() {
     return {
       fullName: this.getFullName(),
-      payPeriod: this.getPayPeriod()
+      payPeriod: this.getPayPeriod(),
     };
   }
 }
