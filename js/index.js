@@ -9,7 +9,7 @@ const payslipOutput = document.getElementById("payslipOutput");
 const reset = document.getElementById("resetButton");
 
 payslipForm.addEventListener("submit", function (event) {
-  handleFormSubmit(event, PayslipCalculator, errorHandling, payslipOutput);
+  handleFormSubmit(event, errorHandling, payslipOutput);
 });
 
 resetForm(reset, payslipForm, payslipOutput);
