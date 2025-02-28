@@ -1,6 +1,5 @@
-import { displayPayslip } from "../views/displayPayslip.js";
 import Employee from "../models/employee.js";
-import PayslipCalculator from "../models/payslipCalculator.js";
+import DisplayPayslip from "../models/payslip.js";
 
 export function getFormData() {
   const firstName = document.getElementById("firstName").value;
@@ -42,13 +41,9 @@ export function handleFormSubmit(event, errorHandling, payslipOutput) {
     return;
   }
   const payslipData = employee.generatePayslip();
-  const grossIncome = PayslipCalculator.calculateGrossIncome(annualSalary);
-  const incomeTax = PayslipCalculator.calculateIncomeTax(annualSalary);
-  const netIncome = PayslipCalculator.calculateNetIncome(
-    grossIncome,
-    incomeTax
-  );
-  const superIncome = PayslipCalculator.calculateSuper(grossIncome, superRate);
+
   // Display the payslip
-  displayPayslip(payslipData, grossIncome, incomeTax, netIncome, superIncome);
+  console.log(payslipData.fullName);
+  DisplayPayslip.displayPayslip(employee);
+  // displayPayslip(payslipData.fullName, payslipData.payPeriod, grossIncome, incomeTax, netIncome, superIncome);
 }
