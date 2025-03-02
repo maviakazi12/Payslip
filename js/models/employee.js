@@ -13,11 +13,5 @@ class Employee {
     this.payPeriod = payPeriod;
   }
   
-  generatePayslip() {
-    return {
-      fullName: this.getFullName(),
-      payPeriod: this.getPayPeriod(),
-    };
-  }
 }
 export default Employee;
