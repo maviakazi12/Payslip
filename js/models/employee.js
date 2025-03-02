@@ -1,5 +1,3 @@
-import { getDayMonth } from "../utils/utilityFunctions.js";
-
 class Employee {
   constructor(
     firstName,
@@ -14,17 +12,7 @@ class Employee {
     this.endDate = endDate;
     this.payPeriod = payPeriod;
   }
-  getFullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-  getPayPeriod() {
-    if (this.payPeriod) {
-      return this.payPeriod;
-    }
-    let formattedStartDate = getDayMonth(this.startDate);
-    let formattedEndDate = getDayMonth(this.endDate);
-    return `${formattedStartDate} - ${formattedEndDate}`;
-  }
+  
   generatePayslip() {
     return {
       fullName: this.getFullName(),

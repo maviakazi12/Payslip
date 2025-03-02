@@ -37,6 +37,10 @@ function displayCsv(content) {
     const annualSalary = cols[i][2];
     const superRate = parseInt(cols[i][3]);
     const payPeriod = cols[i][4];
+    const fullName = PayslipCalculator.getFullName(
+      firstName,
+      lastName
+    );
     const grossIncome = PayslipCalculator.calculateGrossIncome(annualSalary);
     const incomeTax = PayslipCalculator.calculateIncomeTax(annualSalary);
     const netIncome = PayslipCalculator.calculateNetIncome(
@@ -48,13 +52,10 @@ function displayCsv(content) {
       superRate
     );
 
-    const employee = new Employee(firstName, lastName, null, null, payPeriod);
-
-    const payslipData = employee.generatePayslip();
     payTable += `
             <tr>
-              <td>${payslipData.fullName}</td>
-              <td>${payslipData.payPeriod}</td>
+              <td>${fullName}</td>
+              <td>${payPeriod}</td>
               <td>${grossIncome}</td>
               <td>${incomeTax}</td>
               <td>${netIncome}</td>
