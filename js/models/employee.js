@@ -12,6 +12,8 @@ class Employee {
     this.endDate = endDate;
     this.payPeriod = payPeriod;
   }
-  
+  static getFullName(firstName, lastName) {
+    return `${firstName} ${lastName}`;
+  }
 }
 export default Employee;

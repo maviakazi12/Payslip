@@ -1,4 +1,3 @@
-import { getDayMonth } from "../utils/utilityFunctions.js";
 
 class PayslipCalculator{
     static calculateGrossIncome(annualSalary) {
@@ -34,15 +33,6 @@ class PayslipCalculator{
         );
         return superIncome;
     }
-    static getFullName(firstName, lastName) {
-      return `${firstName} ${lastName}`;
-    }
-    static getPayPeriod(startDate,
-      endDate) {
-      
-      let formattedStartDate = getDayMonth(startDate);
-      let formattedEndDate = getDayMonth(endDate);
-      return `${formattedStartDate} - ${formattedEndDate}`;
-    }
+  
 }
 export default PayslipCalculator;

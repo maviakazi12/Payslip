@@ -41,27 +41,16 @@ export function handleFormSubmit(event, errorHandling, payslipOutput) {
     )}</p>`;
     return;
   }
-  
-  const fullName = PayslipCalculator.getFullName(
-    firstName,
-    lastName
-  );
-  const payPeriod = PayslipCalculator.getPayPeriod(
-    startDate,
-    endDate
-  );
-  const grossIncome = PayslipCalculator.calculateGrossIncome(
-    annualSalary
-  );
+
+  const fullName = Employee.getFullName(firstName,lastName);
+  const payPeriod = PayslipDisplay.getPayPeriod(startDate, endDate);
+  const grossIncome = PayslipCalculator.calculateGrossIncome(annualSalary);
   const incomeTax = PayslipCalculator.calculateIncomeTax(annualSalary);
   const netIncome = PayslipCalculator.calculateNetIncome(
     grossIncome,
     incomeTax
   );
-  const superIncome = PayslipCalculator.calculateSuper(
-    grossIncome,
-    superRate
-  );
+  const superIncome = PayslipCalculator.calculateSuper(grossIncome, superRate);
   PayslipDisplay.payslipDisplay(
     fullName,
     payPeriod,

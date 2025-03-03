@@ -37,10 +37,7 @@ function displayCsv(content) {
     const annualSalary = cols[i][2];
     const superRate = parseInt(cols[i][3]);
     const payPeriod = cols[i][4];
-    const fullName = PayslipCalculator.getFullName(
-      firstName,
-      lastName
-    );
+    const fullName = Employee.getFullName(firstName,lastName);
     const grossIncome = PayslipCalculator.calculateGrossIncome(annualSalary);
     const incomeTax = PayslipCalculator.calculateIncomeTax(annualSalary);
     const netIncome = PayslipCalculator.calculateNetIncome(

@@ -1,6 +1,11 @@
-import PayslipCalculator from "./payslipCalculator.js";
+import { getDayMonth } from "../utils/utilityFunctions.js";
 
 class PayslipDisplay {
+  static getPayPeriod(startDate, endDate) {
+    let formattedStartDate = getDayMonth(startDate);
+    let formattedEndDate = getDayMonth(endDate);
+    return `${formattedStartDate} - ${formattedEndDate}`;
+  }
   static payslipDisplay(
     fullName,
     payPeriod,
